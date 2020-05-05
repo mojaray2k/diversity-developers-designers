@@ -8,7 +8,7 @@ const { check, validationResult } = require("express-validator");
 
 const router = express.Router();
 /**
- * @method GET
+ * @method POST
  * @route api/users
  * @description Register user
  * @callback function @param request @param response
