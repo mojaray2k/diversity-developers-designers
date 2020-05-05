@@ -4,6 +4,8 @@
     "githubusername",
     "gravatar",
     "linkedin",
+    "socialfields",
+    "upsert",
     "youtube"
   ]
 }
