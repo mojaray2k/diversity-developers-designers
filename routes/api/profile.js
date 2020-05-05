@@ -4,13 +4,14 @@ const auth = require("../../middleware/auth");
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 const { check, validationResult } = require("express-validator");
+const mongoose = require("mongoose");
 // bring in normalize to give us a proper url, regardless of what user entered
 const normalize = require("normalize-url");
 
 /**
  * @method GET
  * @route api/profile/me
- * @description Get current user profile
+ * @description Fetch current user profile
  * @callback function @param request @param response
  * @access Private
  */
@@ -39,7 +40,6 @@ router.get("/me", auth, async (req, res) => {
  * @callback function @param request @param response
  * @access Private
  */
-
 router.post(
   "/",
   [
@@ -107,5 +107,48 @@ router.post(
     }
   }
 );
+
+/**
+ * @method GET
+ * @route api/profile
+ * @description Fetch all user profiles
+ * @callback function @param request @param response
+ * @access Public
+ */
+router.get("/", async (req, res) => {
+  try {
+    const profiles = await Profile.find().populate("user", ["name", "avatar"]);
+    res.json(profiles);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
+/**
+ * @method GET
+ * @route api/profile/user/:user_id
+ * @description Fetch profile by User ID
+ * @callback function @param request @param response
+ * @access Public
+ */
+router.get("/user/:user_id", async ({ params: { user_id } }, res) => {
+  // check if the id is a valid ObjectId
+  if (!mongoose.Types.ObjectId.isValid(user_id))
+    return res.status(400).json({ msg: "Invalid user ID" });
+
+  try {
+    const profile = await Profile.findOne({
+      user: user_id,
+    }).populate("user", ["name", "avatar"]);
+
+    if (!profile) return res.status(400).json({ msg: "Profile not found" });
+
+    return res.json(profile);
+  } catch (err) {
+    console.error(err.message);
+    return res.status(500).json({ msg: "Server error" });
+  }
+});
 
 module.exports = router;
