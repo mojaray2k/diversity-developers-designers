@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://username:password@cluster0-port.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtSecret": "place your secret here"
+  "jwtSecret": "place your secret here",
+  "githubClientId": "Go to https://github.com/settings/developers to place your client here ",
+  "githubSecret": "Go to https://github.com/settings/developers to place your secret here"
 }
