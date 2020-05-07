@@ -273,6 +273,30 @@ router.put("/experience/:exp_id", auth, async (req, res) => {
     console.error(error);
     return res.status(500).json({ msg: "Server error" });
   }
+
+  // try {
+  //   const currentUserProfile = Profile.findById(req.params.id);
+  //   // Check user
+  //   if (currentUserProfile.user.toString() !== req.user.id) {
+  //     return res.status(401).json({ msg: "User not authorized" });
+  //   } else {
+  //     const profile = await Profile.findOneAndUpdate(
+  //       { experience: { $elemMatch: { _id: req.params.exp_id } } },
+  //       {
+  //         $set: {
+  //           "experience.$.current": req.body.current,
+  //           "experience.$.title": req.body.title,
+  //           "experience.$.company": req.body.company,
+  //           "experience.$.location": req.body.location,
+  //           "experience.$.from": req.body.from,
+  //           "experience.$.to": req.body.to,
+  //           "experience.$.description": req.body.description,
+  //         },
+  //       },
+  //       { new: true }
+  //     );
+  //     res.json(profile);
+  //   }
 });
 
 /**
