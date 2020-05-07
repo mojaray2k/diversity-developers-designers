@@ -251,17 +251,21 @@ router.put(
  * @callback function @param request @param response
  * @access Private
  */
-// router.put("/experience/:exp_id", auth, async (req, res) => {
-//   try {
-//     const foundProfile = await Profile.findById({ user: req.user.id });
-//     foundProfile.experience.,
-//     await foundProfile.save();
-//     return res.status(200).json(foundProfile);
-//   } catch (error) {
-//     console.error(error);
-//     return res.status(500).json({ msg: "Server error" });
-//   }
-// });
+router.put("/experience/:exp_id", auth, async (req, res) => {
+  try {
+    const profile = await Profile.experience.findByIdAndUpdate(
+      req.experience.id,
+      {
+        $set: req.body,
+      },
+      { new: true }
+    );
+    res.json(profile);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ msg: "Server error" });
+  }
+});
 
 /**
  * @method DELETE
