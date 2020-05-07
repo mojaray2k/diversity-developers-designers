@@ -19,10 +19,10 @@ const Login = () => {
 
   return (
     <Fragment>
-      {/* <div class='alert alert-danger'>Invalid credentials</div> */}
-      <h1 class='large text-primary'>Sign In</h1>
-      <p class='lead'>
-        <i class='fas fa-user'></i> Sign into Your Account
+      {/* <div className='alert alert-danger'>Invalid credentials</div> */}
+      <h1 className='large text-primary'>Sign In</h1>
+      <p className='lead'>
+        <i className='fas fa-user'></i> Sign into Your Account
       </p>
       <form className='form' onSubmit={(e) => onSubmit(e)}>
         <div className='form-group'>
