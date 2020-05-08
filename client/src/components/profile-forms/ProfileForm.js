@@ -80,12 +80,25 @@ const ProfileForm = ({
         <div className='form-group'>
           <select name='status' value={status} onChange={onChange}>
             <option>* Select Professional Status</option>
-            <option value='Developer'>Developer</option>
-            <option value='Junior Developer'>Junior Developer</option>
+            <option value='Web Developer'>Web Developer</option>
+            <option value='Production Artist'>Production Artist</option>
+            <option value='Software Developer'>Software Developer</option>
+            <option value='UX Designer'>UX Designer</option>
             <option value='Senior Developer'>Senior Developer</option>
-            <option value='Manager'>Manager</option>
-            <option value='Student or Learning'>Student or Learning</option>
-            <option value='Instructor'>Instructor or Teacher</option>
+            <option value='Multimedia Designer'>Multimedia Designer</option>
+            <option value='Scrum Master'>Scrum Master</option>
+            <option value='Full Stack Developer'>Full Stack Developer</option>
+            <option value='Tech Lead'>Tech Lead</option>
+            <option value='Business Analyst'>Business Analyst</option>
+            <option value='Animator'>Animator</option>
+            <option value='Tester'>Tester</option>
+            <option value='Art Director'>Art Director</option>
+            <option value='Creative Director'>Creative Director</option>
+            <option value='DevOps Engineer'>DevOps Engineer</option>
+            <option value='Layout Artist'>Layout Artist</option>
+            <option value='Book Designer'>Book Designer</option>
+            <option value='Student'>Student</option>
+            <option value='Instructor'>Instructor</option>
             <option value='Intern'>Intern</option>
             <option value='Other'>Other</option>
           </select>
