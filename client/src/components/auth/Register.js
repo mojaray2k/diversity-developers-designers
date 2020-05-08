@@ -27,6 +27,10 @@ const Register = ({ setAlert, register }) => {
     }
   };
 
+  // if (isAuthenticated) {
+  //   return <Redirect to='/' />;
+  // }
+
   return (
     <Fragment>
       <h1 className='large text-primary'>Sign Up</h1>
@@ -91,6 +95,11 @@ const Register = ({ setAlert, register }) => {
 Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
   register: PropTypes.func.isRequired,
+  // isAuthenticated: PropTypes.bool,
 };
+
+// const mapStateToProps = (state) => ({
+//   isAuthenticated: state.auth.isAuthenticated,
+// });
 
 export default connect(null, { setAlert, register })(Register);
