@@ -3,6 +3,7 @@ import {
   USER_LOADED,
   AUTH_ERROR,
   LOGIN_SUCCESS,
+  LOGOUT,
 } from "../actions/types";
 
 const initialState = {
@@ -32,6 +33,7 @@ export default function (state = initialState, action) {
         loading: false,
       };
     case AUTH_ERROR:
+    case LOGOUT:
       return {
         ...state,
         token: null,
