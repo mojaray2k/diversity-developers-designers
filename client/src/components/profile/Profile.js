@@ -43,7 +43,9 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
             <ProfileEduction />
 
             {/* <!-- Github --> */}
-            <ProfileGithub />
+            {profile.githubusername && (
+              <ProfileGithub username={profile.githubusername} />
+            )}
           </div>
         </Fragment>
       )}
