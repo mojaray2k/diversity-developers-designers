@@ -34,7 +34,7 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
             <ProfileTop profile={profile} />
 
             {/* About */}
-            <ProfileAbout />
+            <ProfileAbout profile={profile} />
 
             {/* <!-- Experience --> */}
             <ProfileExperience />
