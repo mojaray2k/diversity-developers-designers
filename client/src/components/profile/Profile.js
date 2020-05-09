@@ -7,7 +7,7 @@ import { getProfileById } from "../../actions/profile";
 import ProfileTop from "./ProfileTop";
 import ProfileAbout from "./ProfileAbout";
 import ProfileExperience from "./ProfileExperience";
-import ProfileEduction from "./ProfileEducation";
+import ProfileEducation from "./ProfileEducation";
 import ProfileGithub from "./ProfileGithub";
 
 const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
